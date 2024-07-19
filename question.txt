@@ -1,0 +1,13 @@
+# Conceptual Questions
+
+1. **What is Flask, and why is it a suitable choice for this project?**
+   
+   Flask is a micro web framework written in Python. It is lightweight and modular, making it easy to scale and extend. Flask is suitable for this project because it allows rapid development with a simple, easy-to-understand syntax. Its modularity allows the integration of various extensions for database management, form handling, and more.
+
+2. **Explain the role of WTForms in a Flask application.**
+   
+   WTForms is a flexible form rendering and validation library for Python web development. In a Flask application, WTForms simplifies the creation and handling of web forms by providing validation, CSRF protection, and easy-to-use form fields. It ensures that form data is secure and properly validated before being processed.
+
+3. **What is SQLAlchemy, and why is it used as an ORM in Flask?**
+   
+   SQLAlchemy is an SQL toolkit and Object-Relational Mapping (ORM) library for Python. It allows developers to interact with databases using Python objects instead of writing raw SQL queries. In Flask, SQLAlchemy is used to manage database connections and operations, making it easier to perform CRUD operations and manage complex relationships between tables.
