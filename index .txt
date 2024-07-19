@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Playlist App</title>
+</head>
+<body>
+    <h1>Playlist App</h1>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('add_song') }}">Add Song</a>
+        <a href="{{ url_for('add_playlist') }}">Add Playlist</a>
+    </nav>
+    <hr>
+    
+    {% if action == 'add_song' %}
+    <h2>Add Song</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title(size=32) }}
+        </p>
+        <p>
+            {{ form.artist.label }}<br>
+            {{ form.artist(size=32) }}
+        </p>
+        <p>
+            {{ form.album.label }}<br>
+            {{ form.album(size=32) }}
+        </p>
+        <p>
+            {{ form.genre.label }}<br>
+            {{ form.genre(size=32) }}
+        </p>
+        <p>
+            {{ form.duration.label }}<br>
+            {{ form.duration() }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    {% elif action == 'add_playlist' %}
+    <h2>Add Playlist</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=32) }}
+        </p>
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description(cols=32, rows=4) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    {% else %}
+    <h2>Playlists</h2>
+    <ul>
+        {% for playlist in playlists %}
+        <li>{{ playlist.name }} - {{ playlist.description }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
